@@ -2,7 +2,11 @@
 three.js editor with more features.
 
 ## Planned features
-* [ ] Modern Interface (Still in development)
+* [X] Modern Interface (Still in development, but mostly done)
 * [ ] Godot Engine's TSCN import/export
 * [ ] Source Engine's VMF/BSP export
 * [ ] Blender's .blend import/export
+* [ ] Snap to grid
+* [ ] Special Scaling tool
+
+...and more!
