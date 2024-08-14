@@ -22,6 +22,7 @@ function SidebarSettings( editor ) {
 		fr: 'Français',
 		zh: '中文',
 		ja: '日本語',
+		ru: 'Русский'
 	};
 
 	const languageRow = new UIRow();

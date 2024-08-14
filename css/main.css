@@ -547,26 +547,31 @@ select {
 
 #toolbar {
 	position: absolute;
-	left: 10px;
-	top: 42px;
-	width: 32px;
+	left: 20px;
+	top: 52px;
+	/*! width: 32px; */
 	background: #eee;
 	border-radius: 10px;
 	text-align: center;
 }
-
+  
+  #toolbar .Checkbox {
+    margin-right: 15px;
+	  margin-left: 15px;
+	  height: 16px;
+		margin-bottom: 10px;
+  }
+ 
 	#toolbar button, #toolbar input {
-		height: 32px;
+		height: 34px;
 	}
 
 		#toolbar button img {
-			width: 16px;
-			opacity: 0.5;
+			width: 24px;
 		}
 
 .Checkbox {
 	scale: 1.5;
-  margin-right: 5px;
 }
 .Checkbox:checked {
 	box-shadow: 0 0 20px #0073e5;
@@ -728,7 +733,7 @@ select {
 
 			#menubar .menu .options {
 				background: rgba(0.0, 0.0, 0.0, 0.5);
-				backdrop-filter: blur(10px);
+				/*! backdrop-filter: blur(10px); */
 				border-radius: 16px;
 				transition-duration: 500ms;
 			}
@@ -776,10 +781,6 @@ select {
 		backdrop-filter: blur(5px);
 		border-radius: 10px;
 	}
-
-		#toolbar img {
-			filter: invert(1);
-		}
 
 	.Outliner {
 		background: #2f2f2f;

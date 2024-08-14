@@ -22,6 +22,7 @@ function MenubarView( editor ) {
 	const states = {
 
 		gridHelper: true,
+		gridSnap: false,
 		cameraHelpers: true,
 		lightHelpers: true,
 		skeletonHelpers: true
@@ -39,6 +40,20 @@ function MenubarView( editor ) {
 		signals.showHelpersChanged.dispatch( states );
 
 	} ).toggleClass( 'toggle-on', states.gridHelper );
+
+	options.add( option );
+
+	// Snap to Grid
+
+	option = new UIRow().addClass( 'option' ).addClass( 'toggle' ).setTextContent( strings.getKey( 'menubar/view/gridSnap' ) ).onClick( function () {
+
+		states.gridSnap = ! states.gridSnap;
+
+		this.toggleClass( 'toggle-on', states.gridSnap );
+
+		signals.showHelpersChanged.dispatch( states );
+
+	} ).toggleClass( 'toggle-on', states.gridSnap );
 
 	options.add( option );
 

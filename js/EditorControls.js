@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {Tween, Easing} from 'https://unpkg.com/@tweenjs/tween.js@23.1.3/dist/tween.esm.js';
 
 class EditorControls extends THREE.EventDispatcher {
 
@@ -205,11 +206,11 @@ class EditorControls extends THREE.EventDispatcher {
 
 			if ( event.button === 0 ) {
 
-				state = STATE.ROTATE;
+				state = STATE.PAN;
 
 			} else if ( event.button === 1 ) {
 
-				state = STATE.ZOOM;
+				state = STATE.ROTATE;
 
 			} else if ( event.button === 2 ) {
 

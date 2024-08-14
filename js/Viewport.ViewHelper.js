@@ -12,7 +12,7 @@ class ViewHelper extends ViewHelperBase {
 		panel.setId( 'viewHelper' );
 		panel.setPosition( 'absolute' );
 		panel.setRight( '0px' );
-		panel.setBottom( '0px' );
+		panel.setTop( '32px' );
 		panel.setHeight( '128px' );
 		panel.setWidth( '128px' );
 

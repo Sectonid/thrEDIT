@@ -37,7 +37,7 @@ function ViewportControls( editor ) {
 	// shading
 
 	const shadingSelect = new UISelect();
-	shadingSelect.setOptions( { 'realistic': 'realistic', 'solid': 'solid', 'normals': 'normals', 'wireframe': 'wireframe' } );
+	shadingSelect.setOptions( { 'realistic': 'Rendered', 'solid': 'Solid', 'normals': 'Normals', 'wireframe': 'Wireframe' } );
 	shadingSelect.setValue( 'solid' );
 	shadingSelect.onChange( function () {
 

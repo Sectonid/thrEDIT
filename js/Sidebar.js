@@ -21,9 +21,9 @@ function Sidebar( editor ) {
 	const project = new SidebarProject( editor );
 	const settings = new SidebarSettings( editor );
 
-	container.addTab( 'scene', strings.getKey( 'sidebar/scene' ), scene );
-	container.addTab( 'project', strings.getKey( 'sidebar/project' ), project );
-	container.addTab( 'settings', strings.getKey( 'sidebar/settings' ), settings );
+	container.addTab( 'Properties', strings.getKey( 'sidebar/properties' ), scene );
+	container.addTab( 'Render', strings.getKey( 'sidebar/render' ), project );
+	container.addTab( 'Editor', strings.getKey( 'sidebar/editor' ), settings );
 	container.select( 'scene' );
 
 	const sidebarPropertiesResizeObserver = new ResizeObserver( function () {
