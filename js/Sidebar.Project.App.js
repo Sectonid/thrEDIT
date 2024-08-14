@@ -140,7 +140,7 @@ function SidebarProjectApp( editor ) {
 			toZip[ 'js/app.js' ] = strToU8( content );
 
 		} );
-		loader.load( '../build/three.module.js', function ( content ) {
+		loader.load( 'https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js', function ( content ) {
 
 			toZip[ 'js/three.module.js' ] = strToU8( content );
 
