@@ -8,7 +8,7 @@ const assets = [
 
 	'../files/favicon.ico',
 
-	'../build/three.module.js',
+	'https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js',
 
 	'../examples/jsm/controls/TransformControls.js',
 
