@@ -5,7 +5,7 @@ import { UIPanel, UIRow, UIHorizontalRule, UIText } from './libs/ui.js';
 import { AddObjectCommand } from './commands/AddObjectCommand.js';
 import { RemoveObjectCommand } from './commands/RemoveObjectCommand.js';
 import { SetPositionCommand } from './commands/SetPositionCommand.js';
-import { clone } from '../../examples/jsm/utils/SkeletonUtils.js';
+import { clone } from 'https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/utils/SkeletonUtils.js';
 
 function MenubarEdit( editor ) {
 
