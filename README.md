@@ -1,5 +1,5 @@
 # ![logo](https://github.com/Sectonidse/thrEDIT/blob/main/images/icon.png) thrEDIT
-three.js editor with more features.
+Scene Editor with more features.
 
 ## Planned features
 * [X] Modern Interface (Still in development, but mostly done)
