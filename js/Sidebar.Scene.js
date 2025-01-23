@@ -157,7 +157,7 @@ function SidebarScene( editor ) {
 		'None': '',
 		'Color': 'Color',
 		'Texture': 'Texture',
-		'Equirectangular': 'Equirect'
+		'Equirectangular': 'HDRI'
 
 	} ).setWidth( '150px' );
 	backgroundType.onChange( function () {
@@ -232,7 +232,7 @@ function SidebarScene( editor ) {
 
 		'None': '',
 		'Background': 'Background',
-		'Equirectangular': 'Equirect',
+		'Equirectangular': 'HDRI',
 		'ModelViewer': 'ModelViewer'
 
 	} ).setWidth( '150px' );
@@ -352,8 +352,8 @@ function SidebarScene( editor ) {
 
 		const options = [];
 
-		options.push( buildOption( camera, false ) );
-		options.push( buildOption( scene, false ) );
+		// options.push( buildOption( camera, false ) );
+		// options.push( buildOption( scene, false ) );
 
 		( function addObjects( objects, pad ) {
 

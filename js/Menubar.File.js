@@ -62,9 +62,8 @@ function MenubarFile( editor ) {
 	// New Project / ...
 
 	const examples = [
-		{ title: 'menubar/file/new/Camera', file: 'camera.app.json' },
 		{ title: 'menubar/file/new/Particles', file: 'particles.app.json' },
-		{ title: 'menubar/file/new/Shaders', file: 'shaders.app.json' }
+		{ title: 'menubar/file/new/RealLight', file: 'RealLight.json' }
 	];
 
 	const loader = new THREE.FileLoader();
@@ -169,7 +168,7 @@ function MenubarFile( editor ) {
 
 			const json = editor.toJSON();
 			const blob = new Blob( [ JSON.stringify( json ) ], { type: 'application/json' } );
-			editor.utils.save( blob, 'project.json' );
+			editor.utils.save( blob, 'Scene.json' );
 
 		} );
 
@@ -437,6 +436,20 @@ function MenubarFile( editor ) {
 		const exporter = new USDZExporter();
 
 		saveArrayBuffer( await exporter.parseAsync( editor.scene ), 'model.usdz' );
+
+	} );
+	fileExportSubmenu.add( option );
+
+	// Export TSCN
+
+	option = new UIRow();
+	option.setClass( 'option' );
+	option.setTextContent( 'TSCN (Godot 4)' );
+	option.onClick( async function () {
+
+		const { GODOTExporter } = await import( './exporters/Godot.JS' );
+
+		saveArrayBuffer( await GODOTExporter.Export( editor.scene ), 'scene.tscn' );
 
 	} );
 	fileExportSubmenu.add( option );

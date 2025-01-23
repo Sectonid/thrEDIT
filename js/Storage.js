@@ -9,7 +9,7 @@ function Storage() {
 
 	}
 
-	const name = 'threejs-editor';
+	const name = 'thrEDIT';
 	const version = 1;
 
 	let database;

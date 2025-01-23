@@ -20,6 +20,12 @@ function MenubarAdd( editor ) {
 	options.setClass( 'options' );
 	container.add( options );
 
+  let blurredShadows = new THREE.WebGLRenderTarget();
+  blurredShadows.width = 4096;
+  blurredShadows.height = 4096;
+  blurredShadows.object = {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, samples: 8};
+
+
 	// Group
 
 	let option = new UIRow();
@@ -374,8 +380,11 @@ function MenubarAdd( editor ) {
 		const intensity = 1;
 
 		const light = new THREE.DirectionalLight( color, intensity );
-		light.name = 'DirectionalLight';
+		light.name = 'Sun';
+		light.castShadow = true;
 		light.target.name = 'DirectionalLight Target';
+	  light.shadow.blurSamples = 16;
+	  light.shadow.map = blurredShadows;
 
 		light.position.set( 5, 10, 7.5 );
 

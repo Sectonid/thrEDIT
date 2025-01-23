@@ -48,16 +48,10 @@ function Viewport( editor ) {
 
 	const grid = new THREE.Group();
 
-	const grid1 = new THREE.GridHelper( 30, 30 );
+	const grid1 = new THREE.GridHelper( 1000, 1000 );
 	grid1.material.color.setHex( GRID_COLORS_LIGHT[ 0 ] );
 	grid1.material.vertexColors = false;
 	grid.add( grid1 );
-
-	const grid2 = new THREE.GridHelper( 30, 6 );
-	grid2.material.color.setHex( GRID_COLORS_LIGHT[ 1 ] );
-	grid2.material.vertexColors = false;
-	grid.add( grid2 );
-
 	const viewHelper = new ViewHelper( camera, container );
 
 	//
@@ -356,14 +350,14 @@ function Viewport( editor ) {
 			mediaQuery.addEventListener( 'change', function ( event ) {
 
 				renderer.setClearColor( event.matches ? 0x333333 : 0xaaaaaa );
-				updateGridColors( grid1, grid2, event.matches ? GRID_COLORS_DARK : GRID_COLORS_LIGHT );
+				updateGridColors( grid1, event.matches ? GRID_COLORS_DARK : GRID_COLORS_LIGHT );
 
 				render();
 
 			} );
 
 			renderer.setClearColor( mediaQuery.matches ? 0x333333 : 0xaaaaaa );
-			updateGridColors( grid1, grid2, mediaQuery.matches ? GRID_COLORS_DARK : GRID_COLORS_LIGHT );
+			updateGridColors( grid1, mediaQuery.matches ? GRID_COLORS_DARK : GRID_COLORS_LIGHT );
 
 		}
 
@@ -890,10 +884,9 @@ function Viewport( editor ) {
 
 }
 
-function updateGridColors( grid1, grid2, colors ) {
+function updateGridColors( grid1, colors ) {
 
 	grid1.material.color.setHex( colors[ 0 ] );
-	grid2.material.color.setHex( colors[ 1 ] );
 
 }
 

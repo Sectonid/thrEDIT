@@ -24,7 +24,7 @@ function Sidebar( editor ) {
 	container.addTab( 'Properties', strings.getKey( 'sidebar/properties' ), scene );
 	container.addTab( 'Render', strings.getKey( 'sidebar/render' ), project );
 	container.addTab( 'Editor', strings.getKey( 'sidebar/editor' ), settings );
-	container.select( 'scene' );
+	container.select( 'Properties' );
 
 	const sidebarPropertiesResizeObserver = new ResizeObserver( function () {
 

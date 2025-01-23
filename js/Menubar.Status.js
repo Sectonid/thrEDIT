@@ -39,7 +39,7 @@ function MenubarStatus( editor ) {
 
 	} );
 
-	const version = new UIText( 'thrEDIT 0.2' );
+	const version = new UIText( 'thrEDIT 0.3' );
 	version.setClass( 'title' );
 	version.setOpacity( 0.5 );
 	container.add( version );

@@ -26,6 +26,11 @@ function SidebarProjectRenderer( editor ) {
 
 	// Shadows
 
+  let blurredShadows = new THREE.WebGLRenderTarget();
+  blurredShadows.width = 4096;
+  blurredShadows.height = 4096;
+  blurredShadows.object = {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, samples: 8};
+
 	const shadowsRow = new UIRow();
 	container.add( shadowsRow );
 
@@ -35,10 +40,10 @@ function SidebarProjectRenderer( editor ) {
 	shadowsRow.add( shadowsBoolean );
 
 	const shadowTypeSelect = new UISelect().setOptions( {
-		0: 'Basic',
-		1: 'PCF',
-		2: 'PCF Soft',
-		//	3: 'VSM'
+		0: 'Nearest',
+		1: 'Standard',
+		2: 'Standard Smooth',
+		3: 'VSM',
 	} ).setWidth( '125px' ).onChange( updateShadows );
 	shadowTypeSelect.setValue( config.getKey( 'project/renderer/shadowType' ) );
 	shadowsRow.add( shadowTypeSelect );
@@ -47,6 +52,7 @@ function SidebarProjectRenderer( editor ) {
 
 		currentRenderer.shadowMap.enabled = shadowsBoolean.getValue();
 		currentRenderer.shadowMap.type = parseFloat( shadowTypeSelect.getValue() );
+		currentRenderer.shadowMap.map = blurredShadows;
 
 		signals.rendererUpdated.dispatch();
 
@@ -95,6 +101,7 @@ function SidebarProjectRenderer( editor ) {
 		currentRenderer = new THREE.WebGLRenderer( { antialias: antialiasBoolean.getValue() } );
 		currentRenderer.shadowMap.enabled = shadowsBoolean.getValue();
 		currentRenderer.shadowMap.type = parseFloat( shadowTypeSelect.getValue() );
+		currentRenderer.shadowMap.map = blurredShadows;
 		currentRenderer.toneMapping = parseFloat( toneMappingSelect.getValue() );
 		currentRenderer.toneMappingExposure = toneMappingExposure.getValue();
 
@@ -112,6 +119,7 @@ function SidebarProjectRenderer( editor ) {
 
 		currentRenderer.shadowMap.enabled = true;
 		currentRenderer.shadowMap.type = THREE.PCFShadowMap;
+		currentRenderer.shadowMap.map = blurredShadows;
 		currentRenderer.toneMapping = THREE.NoToneMapping;
 		currentRenderer.toneMappingExposure = 1;
 
